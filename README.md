@@ -3,8 +3,9 @@ This project contains some data files useful for use with the
 
 In order to use these files, simply download the
 [last archive](https://gitlab.orekit.org/orekit/orekit-data/-/archive/master/orekit-data-master.zip)
-and unzip it anywhere you want, note the path of the orekit-data-master folder
-that will be created and add the following lines at the start of your program:
+and unzip it anywhere you want, note the path of the `orekit-data-master`
+folder that will be created and add the following lines at the start of your
+program:
 
 ```java
 File orekitData = new File("/path/to/the/folder/orekit-data-master");
