@@ -1,21 +1,35 @@
-This project contains some data files useful for use with the
-[Orekit library](http://www.orekit.org/).
+This project contains some data files useful for use as an initial
+setup for the [Orekit library](http://www.orekit.org/).
 
 In order to use these files, simply download the
-[last archive](https://gitlab.orekit.org/orekit/orekit-data/-/archive/master/orekit-data-master.zip)
-and unzip it anywhere you want, note the path of the `orekit-data-master`
-folder that will be created and add the following lines at the start of your
-program:
+[latest archive](https://gitlab.orekit.org/orekit/orekit-data/-/archive/master/orekit-data-master.zip)
+and unzip it anywhere you want. Rename the `orekit-data-master` folder to
+`orekit-data`, note the path of this folder and add the following lines at
+the start of your program:
 
 ```java
-File orekitData = new File("/path/to/the/folder/orekit-data-master");
+File orekitData = new File("/path/to/the/folder/orekit-data");
 DataProvidersManager manager = DataProvidersManager.getInstance();
 manager.addProvider(new DirectoryCrawler(orekitData));
 ```
 
-This zip file contains JPL DE 430 ephemerides from 1990 to 2069, IERS Earth
-orientation parameters from 1973 to October 2018 with predicted date to end 2018
-(both IAU-1980 and IAU-2000), configuration data for ITRF versions used in
-regular IERS files, UTC-TAI history from 1972 to end of 2018, Marshall Solar
-Activity Futur Estimation from 1999 to October 2018, the Eigen 6S gravity field
-and the FES 2004 ocean tides model.
+This zip file contains:
+
+  * JPL DE 430 ephemerides from 1990 to 2069,
+  * IERS Earth orientation parameters from 1973 to October 2018
+    with predicted data to end 2018 (both IAU-1980 and IAU-2000),
+  * configuration data for ITRF versions used in regular IERS files,
+  * UTC-TAI history from 1972 to end of 2018,
+  * Marshall Solar Activity Futur Estimation from 1999 to October 2018,
+  * the Eigen 6S gravity field
+  * the FES 2004 ocean tides model.
+
+The provided archive is just a convenience, it is intended as a started
+point for Orekit setup. Users are responsible to update the files in
+the unzipped folder to suit their needs as new data is published by IERS,
+NASA... This is why we suggest to rename `orekit-data-master`
+into `orekit-data` to show that the live data folder is decorrelated
+from the initial master folder.
+
+There is *NO* guarantee that this conveninence archive will be updated
+or even provided in the future.
