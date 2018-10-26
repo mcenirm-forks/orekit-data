@@ -20,11 +20,11 @@ This zip file contains:
     with predicted data to end 2018 (both IAU-1980 and IAU-2000),
   * configuration data for ITRF versions used in regular IERS files,
   * UTC-TAI history from 1972 to end of 2018,
-  * Marshall Solar Activity Futur Estimation from 1999 to October 2018,
+  * Marshall Solar Activity Future Estimation from 1999 to October 2018,
   * the Eigen 6S gravity field
   * the FES 2004 ocean tides model.
 
-The provided archive is just a convenience, it is intended as a started
+The provided archive is just a convenience, it is intended as a starting
 point for Orekit setup. Users are responsible to update the files in
 the unzipped folder to suit their needs as new data is published by IERS,
 NASA... This is why we suggest to rename `orekit-data-master`
