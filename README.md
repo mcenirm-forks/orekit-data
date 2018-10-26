@@ -1,5 +1,5 @@
-This project contains some data files useful for use as an initial
-setup for the [Orekit library](http://www.orekit.org/).
+This project contains some example data files useful that may be used
+as an initial setup for the [Orekit library](http://www.orekit.org/).
 
 In order to use these files, simply download the
 [latest archive](https://gitlab.orekit.org/orekit/orekit-data/-/archive/master/orekit-data-master.zip)
