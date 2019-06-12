@@ -16,11 +16,11 @@ manager.addProvider(new DirectoryCrawler(orekitData));
 This zip file contains:
 
   * JPL DE 430 ephemerides from 1990 to 2069,
-  * IERS Earth orientation parameters from 1973 to October 2018
-    with predicted data to early 2019 (both IAU-1980 and IAU-2000),
+  * IERS Earth orientation parameters from 1973 to mid 2019
+    with predicted data to late 2019 (both IAU-1980 and IAU-2000),
   * configuration data for ITRF versions used in regular IERS files,
   * UTC-TAI history from 1972 to end of 2019,
-  * Marshall Solar Activity Future Estimation from 1999 to February 2019,
+  * Marshall Solar Activity Future Estimation from 1999 to June 2019,
   * the Eigen 6S gravity field
   * the FES 2004 ocean tides model.
 
