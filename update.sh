@@ -17,6 +17,7 @@
 # limitations under the License.
 
 # this script updates the following files in the orekit-data directory
+#  tai-utc.dat
 #  Earth-Orientation-Parameters/IAU-1980/finals.all
 #  Earth-Orientation-Parameters/IAU-2000/finals2000A.all
 #  MSAFE/mmm####f10_prd.txt (where mmm is a month abbreviation and #### a year)
@@ -34,7 +35,7 @@ fetch_URL()
     mv "$name" "$name.old"
   fi
 
-  if curl "$1" | tr -d '\015' > "$name" ; then
+  if curl "$1" | tr -d '\015' > "$name" && test -s "$name" ; then
     if [ -f "$name.old" ] ; then
         # remove old file
         rm "$name.old"
