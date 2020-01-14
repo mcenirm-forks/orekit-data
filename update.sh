@@ -24,7 +24,7 @@
 
 # base URLS
 usno_url=http://maia.usno.navy.mil/ser7
-iers_rapid_url=ftp://ftp.iers.org/products/eop/rapid/standard
+iers_rapid_url=https://datacenter.iers.org/data/
 msafe_url=https://www.nasa.gov/sites/default/files/atoms/files
 
 # fetch a file from an URL
@@ -91,8 +91,8 @@ first_missing_MSAFE()
 fetch_URL $usno_url/tai-utc.dat
 
 # update (overwriting) Earth Orientation Parameters
-(cd Earth-Orientation-Parameters/IAU-2000 && fetch_URL $iers_rapid_url/finals2000A.all)
-(cd Earth-Orientation-Parameters/IAU-1980 && fetch_URL $iers_rapid_url/finals.all)
+(cd Earth-Orientation-Parameters/IAU-2000 && fetch_URL $iers_rapid_url/9/finals2000A.all)
+(cd Earth-Orientation-Parameters/IAU-1980 && fetch_URL $iers_rapid_url/7/finals.all)
 
 # update (adding files) Marshall Solar Activity Future Estimation
 msafe_base=$(cd MSAFE ; first_missing_MSAFE)
