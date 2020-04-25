@@ -15,7 +15,7 @@ manager.addProvider(new DirectoryCrawler(orekitData));
 
 This zip file contains:
 
-  * JPL DE 430 ephemerides from 1990 to 2069,
+  * JPL DE 430 ephemerides from 1990 to 2149,
   * IERS Earth orientation parameters from 1973 to mid 2019
     with predicted data to late 2019 (both IAU-1980 and IAU-2000),
   * configuration data for ITRF versions used in regular IERS files,
