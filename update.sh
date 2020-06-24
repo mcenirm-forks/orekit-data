@@ -24,8 +24,9 @@
 
 # base URLS
 usno_url=http://maia.usno.navy.mil/ser7
-iers_rapid_url=https://datacenter.iers.org/data/
+iers_rapid_url=https://datacenter.iers.org/data
 msafe_url=https://www.nasa.gov/sites/default/files/atoms/files
+cssi_url=ftp://ftp.agi.com/pub/DynamicEarthData
 
 # fetch a file from an URL
 fetch_URL()
@@ -112,3 +113,6 @@ while [ ! -z "$msafe_base" ] ; do
       msafe_base=""
     fi
 done
+
+# update (overwriting) CSSI space weather data
+(cd CSSI-Space-Weather-Data && fetch_URL $cssi_url/SpaceWeather-All-v1.2.txt)
