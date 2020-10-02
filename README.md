@@ -9,7 +9,7 @@ the start of your program:
 
 ```java
 File orekitData = new File("/path/to/the/folder/orekit-data");
-DataProvidersManager manager = DataProvidersManager.getInstance();
+DataProvidersManager manager = DataContext.getDefault().getDataProvidersManager();
 manager.addProvider(new DirectoryCrawler(orekitData));
 ```
 
