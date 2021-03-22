@@ -23,7 +23,7 @@
 #  MSAFE/mmm####f10_prd.txt (where mmm is a month abbreviation and #### a year)
 
 # base URLS
-usno_url=http://maia.usno.navy.mil/ser7
+cddis_iers_url=https://cddis.nasa.gov/archive/products/iers
 iers_rapid_url=https://datacenter.iers.org/data
 msafe_url=https://www.nasa.gov/sites/default/files/atoms/files
 cssi_url=ftp://ftp.agi.com/pub/DynamicEarthData
@@ -36,7 +36,12 @@ fetch_URL()
     mv "$name" "$name.old"
   fi
 
-  if curl "$1" | tr -d '\015' > "$name" && test -s "$name" ; then
+  if curl \
+         -b ./.fetch-cookies \
+         -c ./.fetch-cookies \
+         -n \
+         -L \
+         "$1" | tr -d '\015' > "$name" && test -s "$name" ; then
     if [ -f "$name.old" ] ; then
         # remove old file
         rm "$name.old"
@@ -89,7 +94,7 @@ first_missing_MSAFE()
 }
 
 # update (overwriting) leap seconds file
-fetch_URL $usno_url/tai-utc.dat
+fetch_URL $cddis_iers_url/tai-utc.dat
 
 # update (overwriting) Earth Orientation Parameters
 (cd Earth-Orientation-Parameters/IAU-2000 && fetch_URL $iers_rapid_url/9/finals2000A.all)
